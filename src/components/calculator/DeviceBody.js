@@ -18,6 +18,10 @@ export const DeviceBody = () => {
         <span>1</span>
         <span>2</span>
         <span>3</span>
+        <span className={style.specialCharacter}>0</span>
+        <span className={style.specialCharacterDot}>
+          <span>.</span>
+        </span>
       </div>
       <div className={style.secondaryContent}>
         <span>/</span>
@@ -27,6 +31,5 @@ export const DeviceBody = () => {
         <span>=</span>
       </div>
     </div>
-
   </div>;
 };

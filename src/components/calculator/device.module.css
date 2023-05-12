@@ -1,5 +1,5 @@
 .container {
-  width: 382px;
+  width: 350px;
   margin-top: 25px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -15,8 +15,8 @@
   background-color: #ececec;
   padding: 25px;
   border-radius: 25px;
-  width: 281px;
-  margin-bottom: -31px;
+  width: 195px;
+  margin-bottom: -28px;
 }
 
 .header {
@@ -84,8 +84,18 @@
   color: #9f9f9f;
 }
 
+.primaryContent > span:last-child {
+  flex-basis: 34%;
+  color: #9f9f9f;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  margin-right: 26px;
+}
+
+
 .primaryContent > span:not(:nth-of-type(1), :nth-of-type(2), :nth-of-type(3)) {
-  margin-top: 30px;
+  margin-top: 26px;
 }
 
 .secondaryContent {
@@ -107,4 +117,24 @@
 
 .secondaryContent > span:not(:first-child) {
   margin-top: 15px;
+}
+
+.tertiary {
+  display: flex;
+  color: #9f9f9f;
+  flex-basis: 100%;
+}
+
+.specialCharacter {
+  height: 25px;
+  line-height: 25px;  
+  width: 25px;
+  border-radius: 25px;
+  color: #dadada;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #9f9f9f;
+  flex-grow: 0.7;
+  padding: 5px 0;
+  margin-right: 5px;
 }
