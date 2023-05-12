@@ -6,6 +6,9 @@ import { DeviceBody } from "./DeviceBody";
 export const Device = () => {
   return (
     <div className={style.container}>
+      <div className={style.upperbar}>
+        <span></span>
+      </div>
       <DeviceHeader />
       <DeviceBody />
     </div>
