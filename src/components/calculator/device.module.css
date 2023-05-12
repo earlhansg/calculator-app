@@ -1,5 +1,5 @@
 .container {
-  width: 424px;
+  width: 382px;
   margin-top: 25px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -30,7 +30,7 @@
 }
 
 .body {
-  padding: 60px 25px 15px 25px;
+  padding: 60px 25px 25px 25px;
   background-color: #ffffff;
   border-radius: 0 0 25px 25px;
   box-shadow: 0 19px 19px 2px rgba(0, 0, 0, 0.1);
@@ -73,6 +73,8 @@
   width: 70%;
   display: flex;
   flex-wrap: wrap;
+  height: 0;
+  justify-content: flex-end;
 }
 
 .primaryContent > span {
@@ -82,7 +84,27 @@
   color: #9f9f9f;
 }
 
+.primaryContent > span:not(:nth-of-type(1), :nth-of-type(2), :nth-of-type(3)) {
+  margin-top: 30px;
+}
+
 .secondaryContent {
   display: flex;
   flex-direction: column;
+}
+
+.secondaryContent > span {
+  height: 45px;
+  line-height: 45px;  
+  width: 45px;  
+  font-size: 1.8em;
+  border-radius: 50%;
+  color: #dadada;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #f7e59f;
+}
+
+.secondaryContent > span:not(:first-child) {
+  margin-top: 15px;
 }
