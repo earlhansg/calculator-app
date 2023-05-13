@@ -1,9 +1,13 @@
 import React from "react";
 
-const PrimaryContent = ({ props }) => {
+const PrimaryContent = ({ props, calculations, setCalculations }) => {
+  const handleClick = ({content}) => {
+    setCalculations([...calculations, content]);
+    console.log('checking', calculations);
+  }
   const buttonStyle = () => {
     if (props.exclusiveCss === null) {
-      return <span>{props.content}</span>;
+      return <span style={{cursor: "pointer"}} onClick={() => handleClick(props)}>{props.content}</span>;
     } else if (props.exclusiveCss === "specialCharacter") {
       return (
         <span
@@ -34,6 +38,7 @@ const PrimaryContent = ({ props }) => {
             display: "flex",
             justifyContent: "center",
             marginRight: "26px",
+            cursor: "pointer"
           }}
         >
           {props.content}

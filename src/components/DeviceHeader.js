@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./shared/device.module.css";
 
-export const DeviceHeader = () => {
+export const DeviceHeader = ({calculations, setCalculations}) => {
   return (
     <div className={style.header}>
       <div className={style.numberContainer}>
