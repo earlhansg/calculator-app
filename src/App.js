@@ -1,4 +1,4 @@
-import { Device } from "./components/calculator/Device";
+import { Device } from "./components/Device";
 function App() {
   return (
     <>

@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./device.module.css";
+import style from "./shared/device.module.css";
 
 export const DeviceHeader = () => {
   return (

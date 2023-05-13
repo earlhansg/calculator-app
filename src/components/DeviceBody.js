@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./device.module.css";
-import PrimaryContent from "./PrimaryContent";
-import { buttons } from "./Device.data";
+import style from "./shared/device.module.css";
+import PrimaryContent from "./shared/PrimaryContent";
+import { buttons } from "./shared/Device.data";
 
 export const DeviceBody = () => {
   const buttonList = buttons.map((button, i) => {
