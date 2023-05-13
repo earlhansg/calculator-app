@@ -1,35 +1,27 @@
 import React from "react";
-import style from './device.module.css'
+import style from "./device.module.css";
+import PrimaryContent from "./PrimaryContent";
+import { buttons } from "./Device.data";
 
 export const DeviceBody = () => {
-  return <div className={style.body}>
+  const buttonList = buttons.map((button, i) => {
+    return button.type === "primaryContent" ? (
+      <PrimaryContent key={i} props={button} />
+    ) : null;
+  });
 
-    <div className={style.bodyContent}>
-      <div className={style.primaryContent}>
-        <span>AC</span>
-        <span>+/-</span>
-        <span>%</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>4</span>
-        <span>5</span>
-        <span>6</span>
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span className={style.specialCharacter}>0</span>
-        <span className={style.specialCharacterDot}>
-          <span>.</span>
-        </span>
-      </div>
-      <div className={style.secondaryContent}>
-        <span>/</span>
-        <span>*</span>
-        <span>-</span>
-        <span>+</span>
-        <span>=</span>
+  return (
+    <div className={style.body}>
+      <div className={style.bodyContent}>
+        <div className={style.primaryContent}>{buttonList}</div>
+        <div className={style.secondaryContent}>
+          <span>/</span>
+          <span>*</span>
+          <span>-</span>
+          <span>+</span>
+          <span>=</span>
+        </div>
       </div>
     </div>
-  </div>;
+  );
 };
