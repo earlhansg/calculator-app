@@ -41,7 +41,6 @@ const PrimaryContent = ({ props }) => {
       );
     }
   };
-  console.log("buttonStyle", buttonStyle());
   return <>{buttonStyle()}</>;
 };
 
