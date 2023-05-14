@@ -10,7 +10,7 @@ export const DeviceBody = ({calculations, setCalculations}) => {
     .map((filtered, i) => <PrimaryContent key={i} props={filtered} calculations={calculations} setCalculations={setCalculations}/>);
   const secondaryPrimaryButtons = buttons
     .filter(({ type }) => type === "secondaryContent")
-    .map((filtered, i) => <SecondaryContent key={i} props={filtered} />);
+    .map((filtered, i) => <SecondaryContent key={i} props={filtered} calculations={calculations} setCalculations={setCalculations}/>);
 
   return (
     <div className={style.body}>

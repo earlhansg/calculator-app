@@ -2,6 +2,7 @@ import React from "react";
 
 const PrimaryContent = ({ props, calculations, setCalculations }) => {
   const handleClick = ({content}) => {
+    // const stringToInt = parseInt(content)
     setCalculations([...calculations, content]);
     console.log('checking', calculations);
   }
