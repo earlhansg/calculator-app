@@ -1,17 +1,24 @@
 import React from "react";
 
-const PrimaryContent = ({ props, calculations, setCalculations }) => {
-  const handleClick = ({content}) => {
-    // const stringToInt = parseInt(content)
-    setCalculations([...calculations, content]);
-    console.log('checking', calculations);
-  }
+const PrimaryContent = ({ props, operators, setOperators }) => {
+  const handleClick = ({ content }) => {
+    if (content === "AC") {
+      setOperators([]);
+    } else {
+      setOperators([...operators, content]);
+    }
+  };
   const buttonStyle = () => {
     if (props.exclusiveCss === null) {
-      return <span style={{cursor: "pointer"}} onClick={() => handleClick(props)}>{props.content}</span>;
+      return (
+        <span style={{ cursor: "pointer" }} onClick={() => handleClick(props)}>
+          {props.content}
+        </span>
+      );
     } else if (props.exclusiveCss === "specialCharacter") {
       return (
         <span
+          onClick={() => handleClick(props)}
           style={{
             height: "25px",
             lineHeight: "25px",
@@ -32,6 +39,7 @@ const PrimaryContent = ({ props, calculations, setCalculations }) => {
     } else {
       return (
         <span
+          onClick={() => handleClick(props)}
           style={{
             flexBasis: "34%",
             color: "#9f9f9f",
@@ -39,7 +47,7 @@ const PrimaryContent = ({ props, calculations, setCalculations }) => {
             display: "flex",
             justifyContent: "center",
             marginRight: "26px",
-            cursor: "pointer"
+            cursor: "pointer",
           }}
         >
           {props.content}
