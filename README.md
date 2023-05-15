@@ -10,3 +10,8 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+### Sample UI
+
+<img src="https://github.com/earlhansg/calculator-app/blob/main/src/images/UI-1.png" style=" width:100% ; height:100% ">
+<img src="https://github.com/earlhansg/calculator-app/blob/main/src/images/UI-2.png" style=" width:100% ; height:100% ">
