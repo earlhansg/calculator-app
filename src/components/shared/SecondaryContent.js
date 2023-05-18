@@ -1,21 +1,20 @@
 import React from "react";
 
-const SecondaryContent = ({
-  props,
-  operators,
-  setOperators,
-  solution,
-  setSolution,
-}) => {
+const SecondaryContent = ({ props, calculatorState, setCalculatorState }) => {
   const handleClick = ({ content }) => {
-    const checkLastValue = typeOfOperators.includes(operators.slice(-1)[0]);
+    const checkLastValue = typeOfOperators.includes(
+      calculatorState.opt.slice(-1)[0]
+    );
     if (content === "=") {
-      const result = performMDAS(operators.join(" "));
-      setSolution([(solution[0] = result)]);
-      setOperators([]);
+      const result = performMDAS(calculatorState.opt.join(" "));
+      setCalculatorState((prev) => ({ ...prev, sol: result }));
+      setCalculatorState((prev) => ({ ...prev, opt: [] }));
     } else {
       const stringToInt = checkLastValue ? [] : content;
-      setOperators([...operators, ...stringToInt]);
+      setCalculatorState((prev) => ({
+        ...prev,
+        opt: [...prev.opt, ...stringToInt],
+      }));
     }
   };
 

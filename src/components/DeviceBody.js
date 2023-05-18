@@ -4,20 +4,14 @@ import PrimaryContent from "./shared/PrimaryContent";
 import SecondaryContent from "./shared/SecondaryContent";
 import { buttons } from "./shared/Device.data";
 
-export const DeviceBody = ({
-  operators,
-  setOperators,
-  solution,
-  setSolution,
-}) => {
+export const DeviceBody = ({ calculatorState, setCalculatorState }) => {
   const filterPrimaryButtons = buttons
     .filter(({ type }) => type === "primaryContent")
     .map((filtered, i) => (
       <PrimaryContent
         key={i}
         props={filtered}
-        operators={operators}
-        setOperators={setOperators}
+        setCalculatorState={setCalculatorState}
       />
     ));
   const secondaryPrimaryButtons = buttons
@@ -26,10 +20,8 @@ export const DeviceBody = ({
       <SecondaryContent
         key={i}
         props={filtered}
-        operators={operators}
-        setOperators={setOperators}
-        solution={solution}
-        setSolution={setSolution}
+        calculatorState={calculatorState}
+        setCalculatorState={setCalculatorState}
       />
     ));
 

@@ -1,11 +1,11 @@
 import React from "react";
 
-const PrimaryContent = ({ props, operators, setOperators }) => {
+const PrimaryContent = ({ props, setCalculatorState }) => {
   const handleClick = ({ content }) => {
     if (content === "AC") {
-      setOperators([]);
+      setCalculatorState((prev) => ({ ...prev, opt: [] }));
     } else {
-      setOperators([...operators, content]);
+      setCalculatorState((prev) => ({ ...prev, opt: [...prev.opt, content] }));
     }
   };
   const buttonStyle = () => {
