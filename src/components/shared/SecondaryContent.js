@@ -5,12 +5,22 @@ const SecondaryContent = ({ props, calculatorState, setCalculatorState }) => {
     const checkLastValue = typeOfOperators.includes(
       calculatorState.opt.slice(-1)[0]
     );
+    const stringToInt = checkLastValue ? [] : content;
     if (content === "=") {
       const result = performMDAS(calculatorState.opt.join(" "));
-      setCalculatorState((prev) => ({ ...prev, sol: result }));
-      setCalculatorState((prev) => ({ ...prev, opt: [] }));
+      const checkResult = isNaN(result) ? 0 : result;
+      setCalculatorState((prev) => ({
+        ...prev,
+        sol: checkResult,
+        opt: [],
+        clickEquals: true,
+      }));
+    } else if (calculatorState.opt.length === 0) {
+      setCalculatorState((prev) => ({
+        ...prev,
+        opt: [...prev.opt, prev.sol, stringToInt],
+      }));
     } else {
-      const stringToInt = checkLastValue ? [] : content;
       setCalculatorState((prev) => ({
         ...prev,
         opt: [...prev.opt, ...stringToInt],

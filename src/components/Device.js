@@ -7,6 +7,7 @@ export const Device = () => {
   const [calculatorState, setCalculatorState] = useState({
     opt: [],
     sol: 0,
+    clickEquals: false
   });
   return (
     <div className={style.container}>
